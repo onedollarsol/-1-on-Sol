@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://dd.dexscreener.com/ds-data/tokens/solana/4UTEFQjNMvfQF5NT8mVfXdMAKoL7hS7i9U4mMVAzpump.png?size=lg&key=42fe20">
+    <title>$1 on sol </title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-image: url(https://dd.dexscreener.com/ds-data/tokens/solana/4UTEFQjNMvfQF5NT8mVfXdMAKoL7hS7i9U4mMVAzpump.png?size=lg&key=42fe20);
+            background-repeat: repeat;
+            background-size: 70px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #221448f8, #0b231ef5);
+        }
+
+        h1 {
+            font-size: 2em;
+            max-width: 1000px;
+            background: linear-gradient(to right, #7c4dff, #64ffda);
+             -webkit-background-clip: text;
+             -webkit-text-fill-color: transparent;
+        }
+
+        #price {
+            font-size: 4em;
+        }
+
+        .price {
+            font-size: 4em;
+            padding-left: 48px;
+        }
+
+        .status {
+            margin-top: 5px;
+            color: #64ffda;
+        }
+
+        .icons {
+            margin-top: 20px;
+        }
+
+        .icons img {
+            width: 40px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .price-div {
+            display: flex;
+        }
+
+        .logo {
+            max-width: 200px;
+            border: 0px solid;
+            border-radius: 30px;
+            margin-bottom: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <img class="logo" src="https://dd.dexscreener.com/ds-data/tokens/solana/4UTEFQjNMvfQF5NT8mVfXdMAKoL7hS7i9U4mMVAzpump.png?size=lg&key=42fe20" alt="logo">
+        <div class="price-div"><div id="price">$0.00</div><div class="price">/ &nbsp $1</div></div>
+        <h1>First decentralized stable-coin on Solana. However, it is currently de-pegged. It's simple, we just need to repeg it to $1.</h1>
+        <div class="icons">
+            
+            <a href="https://t.co/v701dpmzIy"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1024px-Telegram_2019_Logo.svg.png" alt="Telegram"></a>
+            <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png" alt="X"></a>
+            <a href="https://www.dextools.io/app/en/solana/pair-explorer/GUhiSjWhMjbd6aZuMkKnb8Yxqj9qytFoN4sKUM2hNePU?t=1729109118417"><img src="https://info.dextools.io/content/uploads/2023/05/logo-transparente.png" alt="Note"></a>
+        </div>
+    </div>
+
+    <script>
+        async function getPrice() {
+            try {
+                // Change 'YOUR_PAIR_ID' with the right pair ID of the coin
+                const response = await fetch('https://api.dexscreener.com/latest/dex/pairs/solana/guhisjwhmjbd6azumkknb8yxqj9qytfon4skum2hnepu');
+                const data = await response.json();
+                const price = parseFloat(data.pair.priceUsd).toFixed(8); // Price max 8 decimals
+                return price;
+            } catch (error) {
+                console.error("Error fetching price:", error);
+                return "Error";
+            }
+        }
+
+        function updatePrice() {
+            getPrice().then(price => {
+                document.getElementById('price').innerText = `$${price}`;
+            });
+        }
+
+        // Update every 5 seconds
+        setInterval(updatePrice, 5000);
+
+        // load price instantly at start
+        updatePrice();
+    </script>
+</body>
+</html>
