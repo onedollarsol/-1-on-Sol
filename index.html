@@ -7,15 +7,13 @@
     <title>$1 on sol </title>
     <style>
         body {
-            background-color: black;
-            color: white;
+            background-color: white;
+            color: black;
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
-            background-image: url(https://dd.dexscreener.com/ds-data/tokens/solana/4UTEFQjNMvfQF5NT8mVfXdMAKoL7hS7i9U4mMVAzpump.png?size=lg&key=42fe20);
-            background-repeat: repeat;
-            background-size: 70px;
+        
         }
 
         .container {
@@ -24,24 +22,28 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient(to right, #221448f8, #0b231ef5);
+            background-color: white;;
         }
 
         h1 {
-            font-size: 2em;
+            font-size: 1.5em;
             max-width: 1000px;
-            background: linear-gradient(to right, #7c4dff, #64ffda);
+            background-color: black;
+            font-family: sans-serif;
+            font-weight: 300;
              -webkit-background-clip: text;
              -webkit-text-fill-color: transparent;
         }
 
         #price {
-            font-size: 4em;
+            font-size: 5em;
+            font-weight: 600;
         }
 
         .price {
-            font-size: 4em;
-            padding-left: 48px;
+            font-size: 5em;
+            font-weight: 600;
+            padding-left: 28px;
         }
 
         .status {
@@ -51,6 +53,11 @@
 
         .icons {
             margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 12px;
+            flex-direction: row;
         }
 
         .icons img {
@@ -61,13 +68,24 @@
 
         .price-div {
             display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            align-items: center;
+            justify-content: center;
         }
 
         .logo {
-            max-width: 200px;
+            max-width: 180px;
             border: 0px solid;
             border-radius: 30px;
-            margin-bottom: 80px;
+            margin-bottom: 20px;
+
+        }
+        
+
+        #dexs {
+            width: 60px;
+            height: auto;
         }
     </style>
 </head>
@@ -75,13 +93,15 @@
     <div class="container">
 
         <img class="logo" src="https://dd.dexscreener.com/ds-data/tokens/solana/4UTEFQjNMvfQF5NT8mVfXdMAKoL7hS7i9U4mMVAzpump.png?size=lg&key=42fe20" alt="logo">
-        <div class="price-div"><div id="price">$0.00</div><div class="price">/ &nbsp $1</div></div>
-        <h1>First decentralized stable-coin on Solana. However, it is currently de-pegged. It's simple, we just need to repeg it to $1.</h1>
+        <div class="price-div"><div id="price">$0.00</div><div class="price">/ $1</div></div>
+        <h1>First decentralized stable-coin on Solana.<br> However, it is currently de-pegged. It's simple, we just need to repeg it to $1.</h1>
         <div class="icons">
             
-            <a href="https://t.co/v701dpmzIy"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1024px-Telegram_2019_Logo.svg.png" alt="Telegram"></a>
-            <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png" alt="X"></a>
-            <a href="https://www.dextools.io/app/en/solana/pair-explorer/GUhiSjWhMjbd6aZuMkKnb8Yxqj9qytFoN4sKUM2hNePU?t=1729109118417"><img src="https://info.dextools.io/content/uploads/2023/05/logo-transparente.png" alt="Note"></a>
+            <a href="https://t.co/v701dpmzIy"><img src="https://cdn.icon-icons.com/icons2/3186/PNG/512/telegram_icon_194153.png" alt="Telegram"></a>
+            <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg" alt="X"></a>
+            <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Simpleicons_Business_note-black-symbol-variant.svg" alt="whitepaper"></a>
+            <a href="https://www.dextools.io/app/en/solana/pair-explorer/GUhiSjWhMjbd6aZuMkKnb8Yxqj9qytFoN4sKUM2hNePU?t=1729109118417"><img id="dexs" src="https://cdn.prod.website-files.com/6421d264d066fd2b24b91b20/661375b92a7e161501f4b5e5_dexscreener.322a5a2d.png" alt="dexscreener"></a>
+            <a href="https://www.dextools.io/app/en/solana/pair-explorer/GUhiSjWhMjbd6aZuMkKnb8Yxqj9qytFoN4sKUM2hNePU?t=1729109118417"><img src="https://info.dextools.io/content/uploads/2023/05/logo-transparente.png" alt="dextools"></a>
         </div>
     </div>
 
